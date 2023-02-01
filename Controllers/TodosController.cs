@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using TaskApi.Models;
+using TaskApi.Service;
 
 namespace TaskApi.Controllers
 {
@@ -7,16 +8,26 @@ namespace TaskApi.Controllers
     [ApiController]
     public class TodosController : ControllerBase
     {
-        [HttpGet]
-
-        public IActionResult GetTodos()
+       
+        private readonly TodoService _todoService;
+        public TodosController()
         {
+            _todoService= new TodoService();
+        }
 
+        [HttpGet]
+        public IActionResult GetTodos(int? id)
+        {
+            var todos = _todoService.GetallTodos();
+            if (id != null)
+            {
+                return Ok(todos.Where(t => t.Id == id));
 
-            var todos=getallTodos();    
-
-
-            return Ok(todos);
+            }
+            else
+            {
+                return Ok(todos);
+            }
         }
         [HttpPost]
         public IActionResult CreateTodo()
@@ -35,43 +46,7 @@ namespace TaskApi.Controllers
         }
 
 
-        private List<Todo> getallTodos()
-        {
-            var list = new List<Todo>();
-            var todo= new Todo {
-                                 Id=1,
-                                 Title="My todo 1",
-                                 Status=TodoStatus.New,
-                                 Created=DateTime.Now,
-                                 Description="hellowww",
-                                 Due=DateTime.Now.AddDays(5),
-                               };
-            list.Add(todo);
-            todo = new Todo
-            {
-                Id = 2,
-                Title = "My todo 2",
-                Status = TodoStatus.New,
-                Created = DateTime.Now,
-                Description = "hellowww",
-                Due = DateTime.Now.AddDays(5),
-            };
-            list.Add(todo);
-            todo = new Todo
-            {
-                Id = 2,
-                Title = "My todo 2",
-                Status = TodoStatus.New,
-                Created = DateTime.Now,
-                Description = "hellowww",
-                Due = DateTime.Now.AddDays(5),
-            };
-            list.Add(todo);
-
-
-            return list;
-
-        }
+     
 
     }
 }
