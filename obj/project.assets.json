@@ -88,6 +88,29 @@
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
         ]
+      },
+      "TaskApi.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/TaskApi.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TaskApi.Models.dll": {}
+        }
+      },
+      "TaskApi.Services/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "TaskApi.Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/TaskApi.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TaskApi.Services.dll": {}
+        }
       }
     }
   },
@@ -216,11 +239,22 @@
         "swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512",
         "swashbuckle.aspnetcore.swaggerui.nuspec"
       ]
+    },
+    "TaskApi.Models/1.0.0": {
+      "type": "project",
+      "path": "../TaskApi.Models/TaskApi.Models.csproj",
+      "msbuildProject": "../TaskApi.Models/TaskApi.Models.csproj"
+    },
+    "TaskApi.Services/1.0.0": {
+      "type": "project",
+      "path": "../TaskApi.Services/TaskApi.Services.csproj",
+      "msbuildProject": "../TaskApi.Services/TaskApi.Services.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "Swashbuckle.AspNetCore >= 6.2.3"
+      "Swashbuckle.AspNetCore >= 6.2.3",
+      "TaskApi.Services >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -249,7 +283,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Supun\\Professional\\Development\\.net core\\TaskApi.Services\\TaskApi.Services.csproj": {
+              "projectPath": "C:\\Supun\\Professional\\Development\\.net core\\TaskApi.Services\\TaskApi.Services.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

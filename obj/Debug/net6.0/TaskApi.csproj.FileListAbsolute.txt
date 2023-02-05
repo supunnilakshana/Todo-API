@@ -30,3 +30,7 @@ C:\Supun\Professional\Development\.net core\TaskApi\obj\Debug\net6.0\refint\Task
 C:\Supun\Professional\Development\.net core\TaskApi\obj\Debug\net6.0\TaskApi.pdb
 C:\Supun\Professional\Development\.net core\TaskApi\obj\Debug\net6.0\TaskApi.genruntimeconfig.cache
 C:\Supun\Professional\Development\.net core\TaskApi\obj\Debug\net6.0\ref\TaskApi.dll
+C:\Supun\Professional\Development\.net core\TaskApi\bin\Debug\net6.0\TaskApi.Models.dll
+C:\Supun\Professional\Development\.net core\TaskApi\bin\Debug\net6.0\TaskApi.Services.dll
+C:\Supun\Professional\Development\.net core\TaskApi\bin\Debug\net6.0\TaskApi.Services.pdb
+C:\Supun\Professional\Development\.net core\TaskApi\bin\Debug\net6.0\TaskApi.Models.pdb

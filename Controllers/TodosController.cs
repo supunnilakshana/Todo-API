@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using TaskApi.Models;
 using TaskApi.Service;
+using TaskApi.Services;
 
 namespace TaskApi.Controllers
 {
@@ -9,10 +10,10 @@ namespace TaskApi.Controllers
     public class TodosController : ControllerBase
     {
        
-        private readonly TodoService _todoService;
-        public TodosController()
+        private readonly ITodoRepository _todoService;
+        public TodosController(  ITodoRepository todoRepository)
         {
-            _todoService= new TodoService();
+            _todoService= todoRepository;
         }
 
         [HttpGet]
