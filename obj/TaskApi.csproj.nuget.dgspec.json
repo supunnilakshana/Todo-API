@@ -4,6 +4,85 @@
     "C:\\Supun\\Professional\\Development\\.net core\\TaskApi\\TaskApi.csproj": {}
   },
   "projects": {
+    "C:\\Supun\\Professional\\Development\\.net core\\TaskAPi.DataAcess\\TaskAPi.DataAcess.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Supun\\Professional\\Development\\.net core\\TaskAPi.DataAcess\\TaskAPi.DataAcess.csproj",
+        "projectName": "TaskAPi.DataAcess",
+        "projectPath": "C:\\Supun\\Professional\\Development\\.net core\\TaskAPi.DataAcess\\TaskAPi.DataAcess.csproj",
+        "packagesPath": "C:\\Users\\supun\\.nuget\\packages\\",
+        "outputPath": "C:\\Supun\\Professional\\Development\\.net core\\TaskAPi.DataAcess\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\supun\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Supun\\Professional\\Development\\.net core\\TaskApi.Models\\TaskApi.Models.csproj": {
+                "projectPath": "C:\\Supun\\Professional\\Development\\.net core\\TaskApi.Models\\TaskApi.Models.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "EntityFramework": {
+              "target": "Package",
+              "version": "[6.4.4, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "C:\\Supun\\Professional\\Development\\.net core\\TaskApi.Models\\TaskApi.Models.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -83,6 +162,9 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
+              "C:\\Supun\\Professional\\Development\\.net core\\TaskAPi.DataAcess\\TaskAPi.DataAcess.csproj": {
+                "projectPath": "C:\\Supun\\Professional\\Development\\.net core\\TaskAPi.DataAcess\\TaskAPi.DataAcess.csproj"
+              },
               "C:\\Supun\\Professional\\Development\\.net core\\TaskApi.Models\\TaskApi.Models.csproj": {
                 "projectPath": "C:\\Supun\\Professional\\Development\\.net core\\TaskApi.Models\\TaskApi.Models.csproj"
               }

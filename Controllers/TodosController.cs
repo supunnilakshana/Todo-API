@@ -17,17 +17,45 @@ namespace TaskApi.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetTodos(int? id)
+        public IActionResult Get()
         {
-            var todos = _todoService.GetallTodos();
-            if (id != null)
+            try
             {
-                return Ok(todos.Where(t => t.Id == id));
-
-            }
-            else
-            {
+                var todos = _todoService.GetallTodos();
                 return Ok(todos);
+            }
+            catch (Exception e)
+            {
+
+                Console.WriteLine(e);
+                return BadRequest(e.Message);
+            }
+
+        }
+
+        [HttpGet("{id}")]
+        public IActionResult Get(int id)
+        {
+
+            try
+            {
+                var todos = _todoService.GetallTodos();
+                var todo = todos.Where(a => a.Id == id).First();
+
+                if (todo is not null)
+                {
+                    return Ok(todo);
+                }
+                else
+                {
+                    return NotFound();
+                }
+            }
+            catch (Exception e)
+            {
+
+                Console.WriteLine(e);
+                return BadRequest(e.Message);
             }
         }
         [HttpPost]
