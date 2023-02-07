@@ -1,4 +1,4 @@
-using TaskApi.Service;
+
 using TaskApi.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,6 +11,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<ITodoRepository,TodoSqlService>();
 builder.Services.AddScoped<IAuthorRepository, AuthorService>();
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());    
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

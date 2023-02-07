@@ -1,7 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 using TaskApi.Services;
+using TaskApi.Services.Models;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace TaskApi.Controllers
 {
@@ -10,40 +11,44 @@ namespace TaskApi.Controllers
     public class AuthorController : ControllerBase
     {
         private readonly IAuthorRepository _authorRepository;
+        private readonly IMapper _mapper;
 
-        public AuthorController(IAuthorRepository authorRepository)
+        public AuthorController(IAuthorRepository authorRepository,IMapper mapper)
         {
             _authorRepository = authorRepository;
+            _mapper = mapper;
         }
 
         [HttpGet]
-        public IActionResult Get()
+        public ActionResult<ICollection<AuthorDto>> Get()
         {
             try
             {
                 var authors= _authorRepository.GetallAuthors();
-                return Ok(authors);
+                var authorsmap=_mapper.Map<ICollection<AuthorDto>>(authors);
+                return Ok(authorsmap);
             }
             catch (Exception e)
             {
 
                 Console.WriteLine(e);
                 return BadRequest(e.Message);
-            }
+            } 
             
         }
 
         [HttpGet("{id}")]
-        public IActionResult Get(int id)
+        public ActionResult<AuthorDto> Get(int id)
         {
 
             try
             {
                 var authors = _authorRepository.GetallAuthors();
                 var author=authors.Where(a => a.Id == id).First();
+                var authormap = _mapper.Map<AuthorDto>(authors);
 
-              if(author is not null) {
-                    return Ok(author);
+                if (author is not null) {
+                    return Ok(authormap);
                 }
                 else
                 {

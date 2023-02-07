@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "qFhEx7sWsm1r5vHlyKeKajd4PIhjkPTprX+gsWRb3Ivvj7d+KdxEP9uiJd8Z/JUdLDsvFPyzfVLN+2WZtL8suw==",
+  "dgSpecHash": "9fCyy4V2mZVmvcUh7/bdZ2GiBb4Ot5KyeeEtZKr+/qDmZWnI0D+12oaRAiMzizEUkBpjaU2FmAsiIsnACicuvw==",
   "success": true,
   "projectFilePath": "C:\\Supun\\Professional\\Development\\.net core\\TaskApi\\TaskApi.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\supun\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\supun\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
     "C:\\Users\\supun\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\supun\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
     "C:\\Users\\supun\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
